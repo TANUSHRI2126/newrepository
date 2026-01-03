@@ -1,0 +1,6 @@
+streamlit==1.40.0
+pandas==2.2.2
+numpy==1.26.4
+pydeck==0.8.1b0
+plotly==5.24.0
+pickle-mixin
