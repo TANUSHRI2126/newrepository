@@ -6,30 +6,8 @@ import pydeck as pdk
 import plotly.express as px
 from datetime import datetime
 
-import streamlit as st
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
 
-# --- Train a quick demo model right here ---
-X, y = load_iris(return_X_y=True)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
-model = GradientBoostingClassifier()
-model.fit(X_train, y_train)
-
-# --- Define mapping directly ---
-alert_mapping = {0: "Low", 1: "Medium", 2: "High"}
-
-# --- UI part ---
-st.title("Simplest Earthquake Alert Dashboard")
-
-st.write("Model and mapping are defined inside this file — no .pkl needed!")
-
-# Example prediction
-sample = X_test[0].reshape(1, -1)
-pred = model.predict(sample)[0]
-st.write(f"Prediction: {alert_mapping[pred]}")
 
 
 # --- Load trained model and mappings ---
@@ -531,3 +509,4 @@ def app():
 
 
 app()
+
