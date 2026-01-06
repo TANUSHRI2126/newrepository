@@ -40,7 +40,7 @@ def get_theme_css(theme: str) -> str:
         button_border = "#555"
         caption_color = "white"
         shadow = "0 6px 18px rgba(0,0,0,0.35)"
-        font size="22px"
+        
     else:
         text_color = "black"
         card_bg = "white"
@@ -52,7 +52,7 @@ def get_theme_css(theme: str) -> str:
         button_border = "#1558c0"
         caption_color = "black"
         shadow = "0 6px 18px rgba(0,0,0,0.06)"
-        font size="22px"
+        
 
     return f"""
     <style>
