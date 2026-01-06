@@ -40,6 +40,7 @@ def get_theme_css(theme: str) -> str:
         button_border = "#555"
         caption_color = "white"
         shadow = "0 6px 18px rgba(0,0,0,0.35)"
+        font size="22px"
     else:
         text_color = "black"
         card_bg = "white"
@@ -51,6 +52,7 @@ def get_theme_css(theme: str) -> str:
         button_border = "#1558c0"
         caption_color = "black"
         shadow = "0 6px 18px rgba(0,0,0,0.06)"
+        font size="22px"
 
     return f"""
     <style>
@@ -82,7 +84,7 @@ def get_theme_css(theme: str) -> str:
         border-bottom: 1px solid rgba(0,0,0,0.06);
     }}
     .hero h1 {{ font-size: 44px; margin-bottom: 8px; animation: fadeIn 1.2s ease; }}
-    .hero p  {{ font-size: 18px; opacity: 0.9; }}
+    .hero p  {{ font-size: 22px; opacity: 0.9; }}
 
     .card {{
         background: {card_bg}; color: {text_color};
