@@ -144,6 +144,13 @@ def login_page():
         else:
             st.error("Invalid username or password")
     st.markdown("</div>", unsafe_allow_html=True)
+    [data-testid="stAppViewContainer"] {{
+        background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }}
 
 # --- Dashboard page ---
 def dashboard_page():
