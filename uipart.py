@@ -86,7 +86,7 @@ def get_theme_css(theme: str) -> str:
         border-bottom: 1px solid rgba(0,0,0,0.06);
     }}
     .hero h1 {{ font-size: 44px; margin-bottom: 8px; animation: fadeIn 1.2s ease; }}
-    .hero p  {{ font-size: 18px; opacity: 0.9; }}
+    .hero p  {{ font-size: 22px; opacity: 0.9; }}
 
     .card {{
         background: {card_bg}; color: {text_color};
@@ -104,12 +104,12 @@ def get_theme_css(theme: str) -> str:
     .stButton button:hover {{ background: #0d4aa0 !important; }}
 
     .prediction-box {{
-        border-radius:12px; padding:18px; margin:12px 0; text-align:center; font-weight:bold; font-size:18px;
+        border-radius:12px; padding:18px; margin:12px 0; text-align:center; font-weight:bold; font-size:22px;
         animation: fadeIn 1s ease;
     }}
     .prediction-box.safe {{ background-color: rgba(0,255,0,0.25); }}
-    .prediction-box.danger {{ background-color: rgba(255,0,0,0.25); animation: pulseRed 1s infinite; }}
-    .prediction-box.moderate {{ background-color: rgba(255,165,0,0.40); animation: gentleShake 0.5s; }}
+    .prediction-box.danger {{ background-color: rgba(255,0,0,0.25); animation: pulseRed 8s infinite; }}
+    .prediction-box.moderate {{ background-color: rgba(255,165,0,0.40); animation: gentleShake 8s; }}
 
     @keyframes fadeIn {{ from {{ opacity:0; }} to {{ opacity:1; }} }}
     @keyframes pulseRed {{
@@ -146,6 +146,12 @@ def login_page():
         else:
             st.error("Invalid username or password")
     st.markdown("</div>", unsafe_allow_html=True)
+[data-testid="stAppViewContainer"] {
+    background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&auto=format&fit=crop&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
 # --- Dashboard page ---
 def dashboard_page():
@@ -364,7 +370,7 @@ def dashboard_page():
     st.markdown("</div>", unsafe_allow_html=True)
 
     # Educational section
-    st.markdown("<div id='education' class='card'><h2>📖 Educational Section</h2>", unsafe_allow_html=True)
+    st.markdown("<div id='education' class='card' font-size=22px><h2>📖 Educational Section</h2>", unsafe_allow_html=True)
     with st.expander("What do Magnitude and Intensity mean?"):
         st.write("- Magnitude (Mw) measures the energy released at the source of the earthquake.")
         st.write("- Intensity (MMI) describes the effects and shaking observed at specific locations.")
@@ -379,7 +385,7 @@ def dashboard_page():
     st.markdown("</div>", unsafe_allow_html=True)
 
     # Info
-    st.markdown("<div id='info' class='card'><h2>ℹ️ Earthquake Parameters Explained</h2>", unsafe_allow_html=True)
+    st.markdown("<div id='info' class='card' font size=22px><h2>ℹ️ Earthquake Parameters Explained</h2>", unsafe_allow_html=True)
     st.write("""
     • Magnitude (Mw): Measures the size of an earthquake based on seismic wave energy.
     • Depth (km): Distance below the surface where the quake originates.
@@ -509,4 +515,5 @@ def app():
 
 
 app()
+
 
