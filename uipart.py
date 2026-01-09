@@ -19,13 +19,7 @@ FEATURES = mp["FEATURES"]          # e.g., ["mag", "depth", "cdi", "mmi", "sig"]
 # --- Page setup ---
 st.set_page_config(page_title="Earthquake Impact Dashboard", layout="wide")
 
-# --- Initialize session state ---
-if "logged_in" not in st.session_state:
-    st.session_state.logged_in = False
-if "theme" not in st.session_state:
-    st.session_state.theme = "Light"
-if "feedback" not in st.session_state:
-    st.session_state.feedback = []
+
 
 # --- Theme CSS (Light/Dark) with decorative touches ---
 def get_theme_css(theme: str) -> str:
@@ -129,19 +123,7 @@ def get_theme_css(theme: str) -> str:
     </style>
     """
 
-# --- Login page ---
-def login_page():
-    st.markdown("<div class='card' style='max-width:420px;margin:100px auto;text-align:center;'><h2>🔑 Sign In</h2>", unsafe_allow_html=True)
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
-    if st.button("Login"):
-        if username == "admin" and password == "1234":
-            st.session_state.logged_in = True
-            st.success("Login successful! Redirecting...")
-            st.experimental_rerun()
-        else:
-            st.error("Invalid username or password")
-    st.markdown("</div>", unsafe_allow_html=True)
+
 
 # --- Dashboard page ---
 def dashboard_page():
