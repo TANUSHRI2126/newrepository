@@ -426,56 +426,5 @@ def dashboard_page():
     """, unsafe_allow_html=True)
 
 
-import streamlit as st
 
-# Theme toggle in settings
-theme = st.radio("Choose Theme:", ["Light", "Dark"])
-
-# Apply theme-specific styles
-if theme == "Dark":
-    st.markdown(
-        """
-        <style>
-        body, .stApp {
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-        .stButton>button {
-            background-color: #333333;
-            color: #ffffff;
-        }
-        .stTextInput>div>input {
-            background-color: #1e1e1e;
-            color: #ffffff;
-        }
-        .gallery-caption {
-            color: #ffffff; /* captions readable in dark mode */
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-else:
-    st.markdown(
-        """
-        <style>
-        body, .stApp {
-            background-color: #ffffff;
-            color: #000000;
-        }
-        .stButton>button {
-            background-color: #f0f0f0;
-            color: #000000;
-        }
-        .stTextInput>div>input {
-            background-color: #ffffff;
-            color: #000000;
-        }
-        .gallery-caption {
-            color: #000000; /* captions readable in light mode */
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
 
